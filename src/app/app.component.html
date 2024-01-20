@@ -1,0 +1,122 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid" style="margin-top: 5px;">
+    <div class="nav">
+      <span class="navbar-toggler-icon" style="margin-left: 10px;"></span>
+      <h5>Infosys NIA</h5>
+    </div>
+    <div class="justify-content-center">
+      <button type="button" class="btn detailsLayout" style="font-family: Roboto-Medium;">DATA TABLE AND FILTERS</button>
+    </div>
+
+    <div class="icons justify-content-end">
+      <ul class="nav">
+        <li class="nav-item">
+          <i class="bi bi-search"></i>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown">
+            <button style="border-color: #FFFFFF;font-size: 14px;font-family: Roboto-Regular;"
+              class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Choose Project
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <i class="bi bi-bell"></i>
+        </li>
+        <li class="nav-item">
+          <i class="bi bi-person-circle"></i>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</nav>
+
+
+
+<div class="sidebar" style="text-align:center;">
+  <ul class="menu">
+    <li>
+      <ul>
+        <li><a href="#"><span class='bi bi-file-bar-graph-fill'
+              style="color: gray;position: relative;bottom:10px;"></span></a></li>
+        <li><a href="#"><span class="bi bi-send-arrow-down" style="color: gray"></span></a></li>
+        <li><a href="#"><span class="bi bi-trash" style="color: gray"></span></a></li>
+        <li><a href="#"><span class="bi bi-exclamation-octagon" style="color: gray"></span></a></li>
+        <li><a href="#"><span class="bi bi-chat-right-fill" style="color: gray"></span> </a></li>
+        <li><a href="#"><span class="bi bi-flag-fill" style="color: gray"></span></a></li>
+        <li><a href="#"><span class="bi bi-file-earmark-fill" style="color: gray"></span></a></li>
+        <li><a href="#"><span class="bi bi-cart-fill" style="color: gray"></span></a></li>
+        <li><a href="#"><span class="bi bi-people-fill" style="color: gray"></span> </a></li>
+        <li><a href="#"><span class="bi bi-chevron-right" style="color: gray"></span></a></li>
+      </ul>
+    </li>
+
+  </ul>
+</div>
+
+<nav class="navbar navbar-light bg-light"
+  style="border-bottom: 1px solid rgba(0,0,0,0.10);font-size: 14px;padding-top: 10px;padding-bottom: 10px;margin-left: 3rem;">
+  <div class="container-fluid" style="color:  #000000;font-size: 18px;">
+    <div class="nav">
+      <span style="margin-left: 6px;font-family: Roboto-Medium;">Document Types</span>
+      
+
+    </div>
+    
+
+    <div class="">
+      <button type="button" class="btn btn-light" style="width: 10rem;font-family: Roboto-Medium;border: 1px solid #979797;color: #979797;margin-right: 10px;font-size: 14px;">DOWNLOAD</button>
+      <button type="button" class="btn btn-primary" style="width: 15rem;font-family: Roboto-Medium;font-size: 14px;">CREATE NEW DOCUMENT TYPE</button>
+    </div>
+    
+
+  </div>
+</nav>
+
+
+<p-table [value]="products" [(selection)]="selectedProducts" dataKey="code" [tableStyle]="{'min-width': '50rem'}">
+  <ng-template pTemplate="header">
+      <tr>
+          <th style="width: 4rem">
+              <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+          </th>
+          <th>Document Type</th>
+          <th>Language</th>
+          <th>Domain</th>
+          <th>Intents</th>
+          <th>Entities</th>
+          <th>Documents</th>
+          <th>assigned</th>
+          <th>Tagged</th>
+          <th>Trained</th>
+          <th>Status</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+      <tr>
+          <td>
+              <p-tableCheckbox [value]="product"></p-tableCheckbox>
+          </td>
+          <td>{{product.type}}</td>
+          <td>{{product.language}}</td>
+          <td>{{product.domain}}</td>
+          <td>{{product.intents}}</td>
+          <td>{{product.entities}}</td>
+          <td>{{product.documents}}</td>
+          <td>{{product.assigned}}</td>
+          <td>{{product.tagged}}</td>
+          <td>{{product.trained}}</td>
+          <td>{{product.status}}</td>
+          
+      </tr>
+  </ng-template>
+</p-table>
